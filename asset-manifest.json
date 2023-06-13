@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/recipe-management-app/static/css/main.475e833f.css",
-    "main.js": "/recipe-management-app/static/js/main.0c81e6a2.js",
+    "main.js": "/recipe-management-app/static/js/main.682bb498.js",
     "static/media/Mont-Regular.ttf": "/recipe-management-app/static/media/Mont-Regular.e797167c18f9897bb607.ttf",
     "static/media/Mont-SemiBold.ttf": "/recipe-management-app/static/media/Mont-SemiBold.0b5e68ebb36ca4006e21.ttf",
     "static/media/Mont-Bold.ttf": "/recipe-management-app/static/media/Mont-Bold.3675b597d3ffb2b75168.ttf",
     "index.html": "/recipe-management-app/index.html",
     "main.475e833f.css.map": "/recipe-management-app/static/css/main.475e833f.css.map",
-    "main.0c81e6a2.js.map": "/recipe-management-app/static/js/main.0c81e6a2.js.map"
+    "main.682bb498.js.map": "/recipe-management-app/static/js/main.682bb498.js.map"
   },
   "entrypoints": [
     "static/css/main.475e833f.css",
-    "static/js/main.0c81e6a2.js"
+    "static/js/main.682bb498.js"
   ]
 }
