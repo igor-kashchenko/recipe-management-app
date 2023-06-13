@@ -31,8 +31,6 @@ export const App: React.FC = () => {
         <Route path='/added' element={<SavedPage />} />
 
         <Route path='/home' element={<Navigate to='/' replace />} />
-
-
       </Routes>
 
       <ErrorSnackbar />

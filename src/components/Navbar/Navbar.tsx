@@ -73,13 +73,13 @@ export const Navbar: React.FC = () => {
       <Box display={'flex'}>
         {isUserLoggedIn && (
           <>
-            <Button sx={{ mr: 2 }} href="added" color="secondary">
+            <Button sx={{ mr: 2 }} href="/added" color="secondary">
               <BookmarkAddedIcon sx={{ mr: 1 }} />
 
               <Typography variant="body2">My Saved</Typography>
             </Button>
 
-            <Button sx={{ mr: 2 }} href="favourites" color="secondary">
+            <Button sx={{ mr: 2 }} href="/favourites" color="secondary">
               <FavoriteBorderIcon sx={{ mr: 1 }} />
 
               <Typography variant="body2">My Favs</Typography>
