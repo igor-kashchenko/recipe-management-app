@@ -1,26 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Navigate, Route, Routes } from 'react-router-dom';
+import { AppContainer } from './components/AppContainer';
+import { HomePage } from './modules/HomePage';
+import { Navbar } from './components/Navbar';
+import { PageNotFound } from './modules/PageNotFound';
+import { FavPage } from './modules/FavPage';
+import { ErrorSnackbar } from './components/FormErrorSnackbar';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContainer>
+      <Navbar />
+
+      <Routes>
+        <Route path='*' element={<PageNotFound />} />
+
+        <Route path='/' element={<HomePage />} />
+
+        <Route path='/favourites' element={<FavPage />} />
+
+        <Route path='/home' element={<Navigate to='/' replace />} />
+      </Routes>
+
+      <ErrorSnackbar />
+    </AppContainer>
   );
-}
+};
 
 export default App;
