@@ -3,12 +3,13 @@ import { ContentContainer } from '../../components/ContentContainer';
 import { UniversalList } from '../../components/UniversalList';
 import { useAppSelector } from '../../redux/hooks';
 
-export const FavPage: React.FC = () => {
-  const favRecipes = useAppSelector((state) => state.recipes.favRecipes);
+export const SavedPage: React.FC = () => {
+  const savedRecipes = useAppSelector(state => state.recipes.savedRecipes);
 
   return (
     <ContentContainer>
-      <UniversalList recipes={favRecipes} />
+      <UniversalList recipes={savedRecipes}/>
     </ContentContainer>
   );
 };
+

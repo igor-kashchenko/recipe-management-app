@@ -1,22 +1,24 @@
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
 import React, { useState } from 'react';
-import { useAppSelector } from '../../redux/hooks';
-import { RecipeCard } from '../RecipeCard';
-import Typography from '@mui/material/Typography';
-import { Category, CookingTime } from '../../types';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Grid from '@mui/material/Grid';
 import MenuItem from '@mui/material/MenuItem';
-import { filterRecipe } from '../../utils.ts';
+import Paper from '@mui/material/Paper';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Typography from '@mui/material/Typography';
 import CloseIcon from '@mui/icons-material/Close';
+import { Category, CookingTime, Recipe } from '../../types';
+import { filterRecipe } from '../../utils.ts';
+import { RecipeCard } from '../RecipeCard';
 
-export const GeneralRecipesList: React.FC = () => {
+type Props = {
+  recipes: Recipe[];
+};
+
+export const UniversalList: React.FC<Props> = ({ recipes }) => {
   const [cookingTimeFilter, setCookingTimeFilter] = useState<CookingTime>(
     CookingTime.ALL
   );
   const [categoryFilter, setCategoryFilter] = useState<Category>(Category.ALL);
 
-  const recipes = useAppSelector((state) => state.recipes.filteredRecipes);
   const isListEmpty = recipes.length === 0;
 
   const handleCookingTimeFilterChange = (event: SelectChangeEvent) => {
@@ -52,7 +54,7 @@ export const GeneralRecipesList: React.FC = () => {
             alignItems={'center'}
             justifyContent={'center'}
           >
-            Search for a meal
+            No result.
           </Typography>
         ) : (
           <Grid container spacing={2}>
@@ -69,7 +71,6 @@ export const GeneralRecipesList: React.FC = () => {
                 <MenuItem value={CookingTime.DESC}>Descending</MenuItem>
               </Select>
             </Grid>
-
             <Grid item xs={5} mb={2}>
               <Select
                 value={categoryFilter}

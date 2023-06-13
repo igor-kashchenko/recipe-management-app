@@ -11,7 +11,12 @@ export type usersInitialState = {
 }
 
 export type recipesInitialState = {
-  generalRecipes: Recipe[];
+  status: Status;
+  recipes: Recipe[];
+  error: string | undefined;
+  filteredRecipes: Recipe[];
+  savedRecipes: Recipe[];
+  favRecipes: Recipe[]
 }
 
 export enum FormErrors {
@@ -21,8 +26,30 @@ export enum FormErrors {
 
 export type Recipe = {
   title: string,
+  cookingTime: string,
   description: string,
+  category: string,
   image?: string,
 } & {
     [K in `ingredient${number}`]: string;
   }
+
+export enum Status {
+  Idle = 'idle',
+  Loading = 'loading',
+  Succeeded = 'succeeded',
+  Failed = 'failed',
+}
+
+export enum CookingTime {
+  ALL = 'all',
+  ASC = 'asc',
+  DESC = 'desc',
+}
+
+export enum Category {
+  ALL = 'all',
+  DESSERT = 'Dessert',
+  DINNER = 'Dinner',
+  BREAKFAST = 'Breakfast',
+}

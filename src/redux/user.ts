@@ -29,7 +29,7 @@ const userSlice = createSlice({
     },
     setError(state, action: PayloadAction<FormErrors | null>) {
       state.error = action.payload;
-    }
+    },
   },
 });
 

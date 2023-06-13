@@ -15,19 +15,25 @@ type Props = {
   handleCloseSignIn: () => void;
 };
 
-export const SignUpModal: React.FC<Props> = ({ open, handleClose, handleCloseSignIn }) => {
+export const SignUpModal: React.FC<Props> = ({
+  open,
+  handleClose,
+  handleCloseSignIn,
+}) => {
   const [newUserName, setNewUserName] = useState('');
   const [newEmail, setNewEmail] = useState('');
   const [newPassword, setNewPassword] = useState('');
 
   const dispatch = useAppDispatch();
-  const users = useAppSelector(state => state.user.users);
+  const users = useAppSelector((state) => state.user.users);
 
   const handleSignUp = (event: FormEvent) => {
     event.preventDefault();
     dispatch(setError(null));
 
-    const existingUser = users.find((user) => user.email === newEmail || user.userName === newUserName);
+    const existingUser = users.find(
+      (user) => user.email === newEmail || user.userName === newUserName
+    );
 
     if (existingUser) {
       dispatch(setError(FormErrors.DuplicateUser));

@@ -8,8 +8,10 @@ export const ErrorSnackbar: React.FC = () => {
   const dispatch = useAppDispatch();
   const error = useAppSelector((state) => state.user.error);
 
-  const handleClose = ( event?: React.SyntheticEvent | Event,
-    reason?: string) => {
+  const handleClose = (
+    event?: React.SyntheticEvent | Event,
+    reason?: string
+  ) => {
     if (reason === 'clickaway') {
       return;
     }
