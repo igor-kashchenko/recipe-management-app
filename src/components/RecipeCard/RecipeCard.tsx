@@ -36,6 +36,8 @@ export const RecipeCard: React.FC<Props> = ({ recipe }) => {
   const { title, description, category, cookingTime } = recipe;
   const ingredients = parseRecipe(recipe);
 
+  console.log(ingredients);
+
   const handleSaveClick = (recipe: Recipe) => {
     dispatch(saveRecipe(recipe));
   };

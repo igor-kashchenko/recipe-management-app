@@ -6,7 +6,7 @@ export const parseRecipe = (recipe: Recipe | null) => {
   }
 
   const ingredients = Object.values(recipe)
-    .slice(3)
+    .slice(4)
     .filter((ingredient) => ingredient !== '');
 
   return ingredients;
