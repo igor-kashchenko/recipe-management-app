@@ -26,9 +26,9 @@ export const App: React.FC = () => {
 
         <Route path='/' element={<HomePage />} />
 
-        <Route path='favourites' element={<FavPage />} />
+        <Route path='/favourites' element={<FavPage />} />
 
-        <Route path='added' element={<SavedPage />} />
+        <Route path='/added' element={<SavedPage />} />
 
         <Route path='/home' element={<Navigate to='/' replace />} />
 
