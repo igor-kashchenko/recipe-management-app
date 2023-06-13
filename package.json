@@ -1,5 +1,6 @@
 {
   "name": "recipe-management-app",
+  "homepage": "https://igor-kashchenko.github.io/recipe-management-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -28,7 +29,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -53,6 +56,7 @@
     "@typescript-eslint/parser": "^5.59.11",
     "eslint": "^8.42.0",
     "eslint-plugin-react": "^7.32.2",
+    "gh-pages": "^5.0.0",
     "prettier": "2.8.8"
   }
 }
