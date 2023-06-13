@@ -1,5 +1,7 @@
 # Recipe Management Web App
 
+## [DEMO](https://igor-kashchenko.github.io/recipe-management-app/)
+
 This is a recipe management web application built using React, Redux, and TypeScript. The goal of this application is to allow users to store and manage their favorite recipes
 
 ## Features
