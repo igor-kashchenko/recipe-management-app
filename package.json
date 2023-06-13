@@ -1,6 +1,6 @@
 {
   "name": "recipe-management-app",
-  "homepage": "https://igor-kashchenko.github.io/recipe-management-app",
+  "homepage": "https://igor-kashchenko.github.io/recipe-management-app/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
