@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { Navigate, Route, Routes } from 'react-router-dom';
 import { AppContainer } from './components/AppContainer';
 import { HomePage } from './modules/HomePage';
 import { Navbar } from './components/Navbar';
@@ -9,29 +8,31 @@ import { ErrorSnackbar } from './components/FormErrorSnackbar';
 import { useAppDispatch } from './redux/hooks';
 import { mockFetchRecipes } from './redux/recipes';
 import { SavedPage } from './modules/SavedPage';
+import { Navigate, useRoutes } from 'react-router-dom';
+
 
 export const App: React.FC = () => {
   const dispatch = useAppDispatch();
+
+  const routes = [
+    { path: '/', element: <HomePage /> },
+    { path: 'favourites', element: <FavPage /> },
+    { path: 'added', element: <SavedPage /> },
+    { path: 'home', element: <Navigate to="/" replace /> },
+    { path: '*', element: <PageNotFound /> }
+  ];
 
   useEffect(() => {
     dispatch(mockFetchRecipes());
   }, [dispatch]);
 
+  const element = useRoutes(routes);
+
   return (
     <AppContainer>
       <Navbar />
 
-      <Routes>
-        <Route path='*' element={<PageNotFound />} />
-
-        <Route path='/' element={<HomePage />} />
-
-        <Route path='/favourites' element={<FavPage />} />
-
-        <Route path='/added' element={<SavedPage />} />
-
-        <Route path='/home' element={<Navigate to='/' replace />} />
-      </Routes>
+      {element}
 
       <ErrorSnackbar />
     </AppContainer>

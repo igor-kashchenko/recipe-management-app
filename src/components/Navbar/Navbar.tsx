@@ -14,14 +14,14 @@ import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { UserProfile } from '../UserProfile';
 import { setCurrentUser } from '../../redux/user';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export const Navbar: React.FC = () => {
   const [isSignInOpen, setIsSignInOpen] = useState(false);
   const [isSigUpOpen, setIsSignUpOpen] = useState(false);
 
-  const navigate = useNavigate();
-
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const isUserLoggedIn = useAppSelector((state) => state.user.currentUser);
   const userName = useAppSelector((state) => state.user.currentUser?.userName);
@@ -62,7 +62,7 @@ export const Navbar: React.FC = () => {
         py: 1,
       }}
     >
-      <Button color="secondary" href="/">
+      <Button color="secondary" component={Link} to='/'>
         <LunchDiningIcon sx={{ mr: 1 }} />
 
         <Typography variant="body2" lineHeight={'22px'}>
@@ -73,13 +73,13 @@ export const Navbar: React.FC = () => {
       <Box display={'flex'}>
         {isUserLoggedIn && (
           <>
-            <Button sx={{ mr: 2 }} href="/added" color="secondary">
+            <Button sx={{ mr: 2 }} color="secondary" component={Link} to={'/added'}>
               <BookmarkAddedIcon sx={{ mr: 1 }} />
 
               <Typography variant="body2">My Saved</Typography>
             </Button>
 
-            <Button sx={{ mr: 2 }} href="/favourites" color="secondary">
+            <Button sx={{ mr: 2 }} color="secondary" component={Link}  to={'/favourites'}>
               <FavoriteBorderIcon sx={{ mr: 1 }} />
 
               <Typography variant="body2">My Favs</Typography>
